@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Database>
+<Org>
+    <Level>0</Level>
+	<OrgId>5SS242 85</OrgId>
+	<OrgName>珠海优华</OrgName>
+	<ChildsNum>3</ChildsNum>
+	
+	<Department>
+		<FatherId>5SS242 85</FatherId>
+		<Level>1</Level>
+		<DepId>5SS242 8502</DepId>
+		<DepName>技术部</DepName>
+		<ChildsNum>2</ChildsNum>
+	</Department>
+	<Department>
+		<FatherId>5SS242 8502</FatherId>
+		<Level>2</Level>
+		<DepId>5SS242 850201</DepId>
+		<DepName>实验室01</DepName>
+		<ChildsNum>0</ChildsNum>
+	</Department>
+	<Department>
+		<FatherId>5SS242 8502</FatherId>
+		<Level>2</Level>
+		<DepId>5SS242 850202</DepId>
+		<DepName>实验室02</DepName>
+		<ChildsNum>0</ChildsNum>
+	</Department>
+	
+	<Department>
+		<FatherId>5SS242 85</FatherId>
+		<Level>1</Level>
+		<DepId>5SS242 8504</DepId>
+		<DepName>销售部</DepName>
+		<ChildsNum>2</ChildsNum>
+	</Department>
+	<Department>
+		<FatherId>5SS242 8504</FatherId>
+		<Level>2</Level>
+		<DepId>5SS242 850401</DepId>
+		<DepName>销售部01</DepName>
+		<ChildsNum>0</ChildsNum>
+	</Department>
+	<Department>
+		<FatherId>5SS242 8504</FatherId>
+		<Level>2</Level>
+		<DepId>5SS242 850402</DepId>
+		<DepName>销售部02</DepName>
+		<ChildsNum>0</ChildsNum>
+	</Department>
+	
+	<Department>
+		<FatherId>5SS242 85</FatherId>
+		<Level>1</Level>
+		<DepId>5SS242 8503</DepId>
+		<DepName>后勤部</DepName>
+		<ChildsNum>2</ChildsNum>
+	</Department>
+	<Department>
+		<FatherId>5SS242 8503</FatherId>
+		<Level>2</Level>
+		<DepId>5SS242 850301</DepId>
+		<DepName>后勤部01</DepName>
+		<ChildsNum>0</ChildsNum>
+	</Department>
+	<Department>
+		<FatherId>5SS242 8503</FatherId>
+		<Level>2</Level>
+		<DepId>5SS242 850302</DepId>
+		<DepName>后勤部02</DepName>
+		<ChildsNum>0</ChildsNum>
+	</Department>
+	
+</Org>
+<Org>
+	<Level>0</Level>
+	<OrgId>12345</OrgId>
+	<OrgName>珠海一中</OrgName>
+	<ChildsNum>2</ChildsNum>
+	
+	<Department>
+		<FatherId>12345</FatherId>
+		<Level>1</Level>
+		<DepId>1234501</DepId>
+		<DepName>办公室</DepName>
+		<ChildsNum>2</ChildsNum>
+	</Department>
+	<Department>
+		<FatherId>1234501</FatherId>
+		<Level>2</Level>
+		<DepId>123450101</DepId>
+		<DepName>办公室01</DepName>
+		<ChildsNum>0</ChildsNum>
+	</Department>
+	<Department>
+		<FatherId>1234501</FatherId>
+		<Level>2</Level>
+		<DepId>123450102</DepId>
+		<DepName>办公室02</DepName>
+		<ChildsNum>0</ChildsNum>
+	</Department>
+	<Department>
+		<FatherId>12345</FatherId>
+		<Level>1</Level>
+		<DepId>1234502</DepId>
+		<DepName>教室</DepName>
+		<ChildsNum>2</ChildsNum>
+	</Department>
+	<Department>
+		<FatherId>1234502</FatherId>
+		<Level>2</Level>
+		<DepId>123450201</DepId>
+		<DepName>教室01</DepName>
+		<ChildsNum>0</ChildsNum>
+	</Department>
+	<Department>
+		<FatherId>1234502</FatherId>
+		<Level>2</Level>
+		<DepId>123450202</DepId>
+		<DepName>教室02</DepName>
+		<ChildsNum>0</ChildsNum>
+	</Department>
+</Org>
+</Database>

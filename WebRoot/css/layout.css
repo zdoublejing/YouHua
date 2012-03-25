@@ -1,0 +1,80 @@
+/*@author jean*/
+/*All pages*/
+#user{position:absolute;right:15px;top:10px;z-index:1}
+#user img{margin-right:5px;vertical-align:middle}
+
+/*********** SA-page *************/
+#sa_page_main{background:url(../images/v_line.gif) 170px top no-repeat}
+/* rt-page-left */
+.sa-page-left{float:left;padding:0px 5px 0px 15px;width:160px}
+.sa-page-left h2{background-repeat:no-repeat;height:34px;line-height:34px;font-size:15px;font-weight:solid}
+.sa-page-left h2 span{float:left;display:none}
+/* rt-page-right */
+.sa-page-right{float:right;padding:0px 15px 0px 10px;width:775px;overflow:hidden}
+.sa-site-nav{background:url(../images/site_nav.gif) no-repeat left center;border-bottom:1px solid #CCC;height:30px;margin-bottom:10px;line-height:30px;text-align:right}
+.sa-site-nav span{color:#025dbf;font-weight:bold}
+
+/*********** RT-page *************/
+#rt_page_main{background:url(../images/v_line.gif) 170px top no-repeat}
+/* rt-page-left */
+.rt-page-left{float:left;padding:0px 5px 0px 15px;width:160px}
+.rt-page-left h2{background-repeat:no-repeat;height:34px;line-height:34px;font-size:15px;font-weight:solid}
+.rt-page-left h2 span{float:left;display:none}
+/* rt-page-right */
+.rt-page-right{float:right;padding:0px 15px 0px 10px;width:775px;overflow:hidden}
+.rt-site-nav{background:url(../images/site_nav.gif) no-repeat left center;border-bottom:1px solid #CCC;height:30px;margin-bottom:10px;line-height:30px;text-align:right}
+.rt-site-nav span{color:#025dbf;font-weight:bold}
+
+
+/*********** ER-page *************/
+#er_page_main{background:url(../images/v_line.gif) 170px top no-repeat}
+
+/* ER-page-left */
+.er-page-left{float:left;padding:0px 5px 0px 15px;width:160px}
+.er-page-left h2{background-image:url(../images/site_title_er.gif);background-repeat:no-repeat;height:34px;line-height:34px;font-size:100%;font-weight:normal}
+.er-page-left h2 span{float:left;display:none}
+
+.er-left-info h2{background-position:0px -0px}
+.er-left-infoaccount h2{background-position:0px -34px}
+.er-left-energy h2{background-position:0px -68px}
+.er-left-energyaccount h2{background-position:0px -102px}
+.er-left-depinfoaccount h2{background-position:0px -136px}
+.er-left-orgqrenergystats h2{background-position:0px -170px}
+.er-left-depenergyaccount h2{background-position:0px -204px}
+.er-left-info,.er-left-infoaccount,.er-left-energy,.er-left-energyaccount,.er-left-depinfoaccount,.er-left-depinfoaccount,.er-left-orgqrenergystats{padding-top:5px;padding-bottom:5px}
+.er-left-info p,.er-left-infoaccount p,.er-left-energy p,.er-left-energyaccount p,.er-left-depinfoaccount p,.er-left-depinfoaccount p,.er-left-orgqrenergystats p{line-height:25px;padding:0px 5px 0px 10px}
+.er-left-info p span,.er-left-infoaccount p span,.er-left-energy p span,.er-left-energyaccount p span,.er-left-depinfoaccount p span,.er-left-depinfoaccount p span,.er-left-orgqrenergystats p span{font-weight:bold}
+
+/* ER-page-right */
+.er-page-right{float:right;padding:0px 15px 0px 10px;width:775px;overflow:hidden}
+.er-site-nav{background:url(../images/site_nav.gif) no-repeat left center;border-bottom:1px solid #CCC;height:30px;margin-bottom:10px;line-height:30px;text-align:right}
+.er-site-nav span{color:#025dbf;font-weight:bold}
+
+.page-reports{margin-bottom:10px}
+.page-reports table{width:98%;}
+.page-reports table th{height:30px;line-height:30px;text-align:center;font-weight:bold;border:none 0px;font-size:12px}
+.page-reports table th.jobs-time{width:100px;background:url(../images/info_title.gif) left top}
+.page-reports table th.jobs-title{background:url(../images/info_title.gif) right top}
+.page-reports table td{border-bottom:1px dashed #D7D7D7;padding:8px}
+.page-reports table td.time-list{color:#666;text-align:center}
+
+/*********** OLAP *************/
+#olap_page_main{background:url(../images/v_line.gif) 170px top no-repeat}
+
+/* olap-page-left */
+.olap-page-left{float:left;padding:0px 5px 0px 15px;width:160px}
+.olap-page-left h2{background-image:url(../images/###);background-repeat:no-repeat;height:34px;line-height:34px;font-size:100%;font-weight:normal}
+.olap-page-left h2 span{float:left;display:none}
+
+/* olap-page-right */
+.olap-page-right{float:right;padding:0px 15px 0px 10px;width:775px;overflow:hidden}
+.olap-site-nav{background:url(../images/site_nav.gif) no-repeat left center;border-bottom:1px solid #CCC;height:30px;margin-bottom:10px;line-height:30px;text-align:right}
+.olap-site-nav span{color:#025dbf;font-weight:bold}
+
+.page-olap{margin-bottom:10px}
+.page-olap table{width:100%;}
+.page-olap table th{height:30px;line-height:30px;text-align:center;font-weight:bold;border:none 0px;font-size:12px}
+.page-olap table th.jobs-time{width:100px;background:url(../images/info_title.gif) left top}
+.page-olap table th.jobs-title{background:url(../images/info_title.gif) right top}
+.page-olap table td{border-bottom:1px dashed #D7D7D7;padding:8px}
+.page-olap table td.time-list{color:#666;text-align:center}

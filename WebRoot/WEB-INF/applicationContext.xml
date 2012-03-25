@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!-- data source -->
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName"
+			value="com.mysql.jdbc.Driver">
+		</property>
+		<property name="url"
+			value="jdbc:mysql://192.168.0.100:3307/yhwebsite">
+		</property>
+		<property name="username" value="root"></property>
+		<property name="password" value="root"></property>
+	</bean>
+	
+	<!-- session factory 模板类 -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLDialect
+				</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>com/youhua/bean/user/Orginfo.hbm.xml</value>
+				<value>com/youhua/bean/user/User.hbm.xml</value>
+				<value>com/youhua/bean/energyreport/Orgbaseinfo.hbm.xml</value>
+				<value>com/youhua/bean/energyreport/Orginfoaccount.hbm.xml</value>
+				<value>com/youhua/bean/energyreport/Departenergyaccount.hbm.xml</value>
+				<value>com/youhua/bean/energyreport/Departinfoaccount.hbm.xml</value>
+				<value>com/youhua/bean/energyreport/Orgenergyaccount.hbm.xml</value>
+				<value>com/youhua/bean/energyreport/Orgenergyitemresult.hbm.xml</value>
+				<value>com/youhua/bean/energyreport/Orgqrenergystats.hbm.xml</value>
+				<value>com/youhua/bean/realtime/Orgrealtimeenergy.hbm.xml</value>
+				<value>com/youhua/bean/satistics/DimenOrgdepart.hbm.xml</value>
+				<value>com/youhua/bean/satistics/FactEnergy.hbm.xml</value>
+				<value>com/youhua/bean/satistics/DimenDate.hbm.xml</value>
+				<value>com/youhua/bean/satistics/DimenEnergyitem.hbm.xml</value>
+				<value>com/youhua/bean/satistics/DimenEnvironment.hbm.xml</value>
+				<value>com/youhua/bean/satistics/DimenGposition.hbm.xml</value>
+				<value>com/youhua/bean/satistics/DimenTime.hbm.xml</value></list>
+		</property>
+	</bean>
+	
+	<!-- user -->
+	<!-- DAO -->
+	<bean id="OrginfoDAO" class="com.youhua.dao.impl.OrginfoDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="UserDAO" class="com.youhua.dao.impl.UserDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>	
+	<!-- service -->
+	<bean id="userService" class="com.youhua.service.UserService">
+		<property name="userdao" ref="UserDAO"></property>
+	</bean>	
+	<!-- action -->
+	<bean id="login" class="com.youhua.action.UserAction">
+		<property name="userService" ref="userService"></property>
+	</bean>
+	
+	<!-- EneregyReport -->
+	<!-- DAO -->
+	<bean id="OrgbaseinfoDAO" class="com.youhua.dao.impl.OrgbaseinfoDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>	
+	<bean id="OrginfoaccountDAO"
+		class="com.youhua.dao.impl.OrginfoaccountDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="DepartenergyaccountDAO"
+		class="com.youhua.dao.impl.DepartenergyaccountDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="DepartinfoaccountDAO"
+		class="com.youhua.dao.impl.DepartinfoaccountDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="OrgenergyaccountDAO"
+		class="com.youhua.dao.impl.OrgenergyaccountDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="OrgenergyitemresultDAO"
+		class="com.youhua.dao.impl.OrgenergyitemresultDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="OrgqrenergystatsDAO"
+		class="com.youhua.dao.impl.OrgqrenergystatsDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="OrgrealtimeenergyDAO"
+		class="com.youhua.dao.impl.OrgrealtimeenergyDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<!-- service -->
+	<bean id="reportService" class="com.youhua.service.ReportService"> <!-- 注意，这个bean的id的名字要和action里的属性xxService的名字保持一致，否则会提示空指针。 -->
+		<property name="orgbaseinfoDao" ref="OrgbaseinfoDAO" /> <!-- 注意 name是ReportService中的私有成员，一定有getter和setter ref则是注入bean的id -->
+		<property name="orginfoaccountDao" ref="OrginfoaccountDAO" />
+		<property name="orgenergyitemresultDao" ref="OrgenergyitemresultDAO" />
+		<property name="orgenergyaccountDao" ref="OrgenergyaccountDAO" />
+		<property name="depinfoaccountDao" ref="DepartinfoaccountDAO" />
+		<property name="orgqrenergystatsDao" ref="OrgqrenergystatsDAO" />
+		<property name="depenergyaccountDao" ref="DepartenergyaccountDAO" />
+	</bean>
+	<!-- action -->
+	<bean id="EnergyReportAction" class="com.youhua.action.EnergyReportAction"><!-- 这里的bean的id和上面又不同。可以随意取，而且struts的action托管到这里 struts.xml也可以用 -->
+		<property name="reportService" ref="reportService" />
+	</bean>
+	
+	<!-- statistic -->
+	<!-- DAO -->
+	<bean id="DimenOrgdepartDAO"
+		class="com.youhua.dao.impl.DimenOrgdepartDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+		<bean id="FactEnergyDAO"
+		class="com.youhua.dao.impl.FactEnergyDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="DimenDateDAO"
+		class="com.youhua.dao.impl.DimenDateDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="DimenEnergyitemDAO"
+		class="com.youhua.dao.impl.DimenEnergyitemDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="DimenEnvironmentDAO"
+		class="com.youhua.dao.impl.DimenEnvironmentDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="DimenGpositionDAO"
+		class="com.youhua.dao.impl.DimenGpositionDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="DimenTimeDAO"
+		class="com.youhua.dao.impl.DimenTimeDAOImpl">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<!-- service -->
+	<bean id="statisticsService" class="com.youhua.service.StatisticsService">
+		<property name="dimenOrgdepartDao" ref="DimenOrgdepartDAO" />
+		<property name="dimenEnergyitemDao" ref="DimenEnergyitemDAO" />
+		<property name="dimenDateDao" ref="DimenDateDAO" />
+	</bean>
+	<!-- action -->
+	<bean id="ContrastAction" class="com.youhua.action.ContrastAction">
+		<property name="statisticsService" ref="statisticsService" />
+	</bean>
+	<bean id="StructureAction" class="com.youhua.action.StructureAction">
+		<property name="statisticsService" ref="statisticsService" />
+	</bean>
+
+</beans>

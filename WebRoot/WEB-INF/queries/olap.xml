@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Schema name="olap">
+  <Cube name="Energy">
+    <Table name="fact_energy"/>
+    
+    <Dimension foreignKey="DatePK" name="日期">
+      <Hierarchy allMemberName="所有日期" hasAll="true" primaryKey="DatePK">
+        <Table name="dimen_date"/>
+        <Level name="年份" column="DateYear"/>
+        <Level name="季度" column="DateQuarter"/>
+        <Level name="月份" column="DateMonth"/>
+        <Level name="日期" column="DateDay"/>
+      </Hierarchy>
+    </Dimension>
+    
+    <Dimension foreignKey="EnergyItemPK" name="能耗项">
+      <Hierarchy allMemberName="所有能耗项" hasAll="true" primaryKey="EnergyItemPK">
+        <Table name="dimen_energyitem"/>
+        <Level name="一级能耗项" column="FirstItemName" />
+        <Level name="二级能耗项" column="SecondItemName" hideMemberIf="IfBlankName"/>
+        <Level name="三级能耗项" column="ThirdItemName" hideMemberIf="IfBlankName"/>
+      </Hierarchy>
+    </Dimension>
+    
+    <Dimension foreignKey="DepartPK" name="机构部门">
+      <Hierarchy allMemberName="所有机构部门" hasAll="true" primaryKey="DepartPK">
+        <Table name="dimen_orgdepart"/>
+        <Level name="机构" column="OrgName"/>
+        <Level name="部门" column="DepartName"/>
+      </Hierarchy>
+    </Dimension>
+    
+    <Measure name="能耗值" column="EnergyValue" datatype="Numeric" aggregator="sum">
+    </Measure>
+    <Measure name="能耗当量值" column="EquValue" datatype="Numeric" aggregator="sum">
+    </Measure>
+  </Cube>
+</Schema>

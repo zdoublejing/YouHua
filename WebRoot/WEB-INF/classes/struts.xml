@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.devMode" value="true"/>
+	<constant name="struts.i18n.encoding" value="utf-8"></constant>
+	<constant name="struts.objectFactory" value="spring"></constant>
+	
+	<package name="User" namespace="/" extends="struts-default">
+		<action name="login" class="com.youhua.action.UserAction" method="login">
+			<result name="error">/login.jsp</result>
+            <result name="success" type="redirect">/index.jsp</result>
+			<!--
+			<result name="success">/index.jsp</result> 这样地址跳转就是action 而不是jsp sitemesh就被失效了
+			-->
+		</action>
+		
+		<action name="logout" class="com.youhua.action.UserAction" method="logout">
+			<result name="success">/login.jsp</result>
+		</action>
+	</package>
+	
+	<package name="Statistics" namespace="/_Statistics" extends="struts-default">	
+		<action name="Contrast" class="ContrastAction" method="contrast">
+			<result name="none">/_Statistics/Contrast.jsp</result>
+		</action>
+		<action name="ContrastUpdate" class="ContrastAction">
+			<result name="success">/_Statistics/Contrast.jsp</result>
+		</action>
+		<action name="Structure" class="StructureAction" method="contrast">
+			<result name="none">/_Statistics/Structure.jsp</result>
+		</action>
+		<action name="StructureUpdate" class="StructureAction">
+			<result name="success">/_Statistics/Structure.jsp</result>
+		</action>
+	</package>
+		
+	<package name="EnergyReport" namespace="/_EnergyReport" extends="struts-default">
+   		<action name="OrgBaseInfo" class="EnergyReportAction" method="orgbaseinfo">
+			<result name="none">/_EnergyReport/OrgBaseInfo.jsp</result>
+   		</action>
+   		<action name="OrgBaseInfoUpdate" class="EnergyReportAction">
+			<result name="success">/_EnergyReport/OrgBaseInfo.jsp</result>
+   		</action>
+   		
+   		<action name="OrgInfoAccount" class="EnergyReportAction" method="orginfoaccount">
+   			<result name="none">/_EnergyReport/OrgInfoAccount.jsp</result>
+   		</action>
+   		<action name="OrgInfoAccountUpdate" class="EnergyReportAction">
+   			<result name="success">/_EnergyReport/OrgInfoAccount.jsp</result>
+   		</action>
+   		
+   		<action name="OrgEnergyItemResult" class="EnergyReportAction" method="orgenergyitemresult">
+   			<result name="none">/_EnergyReport/OrgEnergyItemResult.jsp</result>
+   		</action>
+   		<action name="OrgEnergyItemResultUpdate" class="EnergyReportAction">
+   			<result name="success">/_EnergyReport/OrgEnergyItemResult.jsp</result>
+   		</action>
+   		
+   		<action name="OrgEnergyAccount" class="EnergyReportAction" method="orgenergyaccount">
+   			<result name="none">/_EnergyReport/OrgEnergyAccount.jsp</result>
+   		</action>
+   		<action name="OrgEnergyAccountUpdate" class="EnergyReportAction">
+   			<result name="success">/_EnergyReport/OrgEnergyAccount.jsp</result>
+   		</action>
+   		
+   		<action name="DepInfoAccount" class="EnergyReportAction" method="depinfoaccount">
+   			<result name="none">/_EnergyReport/DepInfoAccount.jsp</result>
+   		</action>
+   		<action name="DepInfoAccountUpdate" class="EnergyReportAction">
+   			<result name="success">/_EnergyReport/DepInfoAccount.jsp</result>
+   		</action>
+
+   		<action name="OrgQrEnergyStats" class="EnergyReportAction" method="orgqrenergystats">
+   			<result name="none">/_EnergyReport/OrgQrEnergyStats.jsp</result>
+   		</action>
+   		<action name="OrgQrEnergyStatsUpdate" class="EnergyReportAction">
+   			<result name="success">/_EnergyReport/OrgQrEnergyStats.jsp</result>
+   		</action>
+   		
+   		<action name="DepEnergyAccount" class="EnergyReportAction" method="depenergyaccount">
+   			<result name="none">/_EnergyReport/DepEnergyAccount.jsp</result>
+   		</action>
+   		<action name="DepEnergyAccountUpdate" class="EnergyReportAction">
+   			<result name="success">/_EnergyReport/DepEnergyAccount.jsp</result>
+   		</action>		
+  	</package>
+
+</struts>    

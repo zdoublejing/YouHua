@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Database>
+<Org>
+    <Level>0</Level>
+	<OrgId>5SS242 85</OrgId>
+	<OrgName>珠海优华</OrgName>
+	<BId></BId>
+	<Building></Building>
+	
+	<Aera>
+		<FatherId></FatherId>
+		<Level>1</Level>
+		<AeraId>5SS242 8502</AeraId>
+		<AeraName>1楼</AeraName>
+		<ChildsNum>2</ChildsNum>
+	</Aera>
+	<Aera>
+
+	</Aera>
+	<Aera>
+
+	</Aera>
+		
+</Org>
+</Database>

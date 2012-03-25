@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.21" id="1">
+    <list-property name="configVars">
+        <structure>
+            <property name="name">__isdisplay__DepId_329_0</property>
+            <property name="value">5SS242 8502</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__FatherId_347_1</property>
+            <property name="value">5SS242 85</property>
+        </structure>
+        <structure>
+            <property name="name">__isdisplay__Year_348_2</property>
+            <property name="value">2012</property>
+        </structure>
+        <structure>
+            <property name="name">Year_348_3</property>
+            <property name="value">2012</property>
+        </structure>
+        <structure>
+            <property name="name">Year_348_type_</property>
+            <property name="value">integer</property>
+        </structure>
+        <structure>
+            <property name="name">DepId_329_4</property>
+            <property name="value">5SS242 8502</property>
+        </structure>
+        <structure>
+            <property name="name">DepId_329_type_</property>
+            <property name="value">string</property>
+        </structure>
+        <structure>
+            <property name="name">FatherId_347_5</property>
+            <property name="value">5SS242 85</property>
+        </structure>
+        <structure>
+            <property name="name">FatherId_347_type_</property>
+            <property name="value">string</property>
+        </structure>
+    </list-property>
+</report>
