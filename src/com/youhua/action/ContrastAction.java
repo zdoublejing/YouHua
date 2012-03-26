@@ -15,6 +15,7 @@ import com.youhua.service.StatisticsService;
 public class ContrastAction extends ActionSupport{
 	/**
 	 * @author jean
+	 * 同期对比获取参数
 	 */
 	private static final long serialVersionUID = 1L;
 	
