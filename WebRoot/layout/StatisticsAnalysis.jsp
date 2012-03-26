@@ -22,7 +22,7 @@
 	<script type="text/javascript" src="../scripts/jquery-1.4.2.min.js"></script>
 	<script type="text/javascript" src="../scripts/jquery.KinSlideshow-1.2.1.js"></script>
 	<script type="text/javascript" src="../scripts/webtry_roll.js"></script>
-	<script type="text/javascript" src="../scripts/ddsmoothmenu.js"></script>
+	<script type="text/javascript" src="../scripts/ddsmoothmenusecondary.js"></script>
 	<script type="text/javascript">
 	ddsmoothmenu.init({
 		mainmenuid: "MainMenu", //menu DIV id
